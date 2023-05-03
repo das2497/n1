@@ -1,0 +1,8 @@
+.clickable {
+    cursor: pointer;
+    background-color: #c1ff7b;
+}
+
+.selected {
+    background-color: rgb(75, 163, 109);
+}
