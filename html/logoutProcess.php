@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_SESSION["SA"])) {
 
-    $_SESSION["SA"] = null;
+    $_SESSION["SA"] = "";
     session_destroy();
     echo "success";
     

@@ -1,13 +1,11 @@
 <?php
-session_start();
+// session_start();
 
 require 'connection.php';
 
-if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
-
+if (true) {
 
 ?>
-
   <!DOCTYPE html>
   <html dir="ltr" lang="en">
 
@@ -19,7 +17,7 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
     <meta name="description" content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>NAITA | Admin</title>
+    <title>ALPHA | ADMIN</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
     <!-- Custom CSS -->
@@ -28,12 +26,7 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
     <link href="../dist/css/style.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
 
   <body>
@@ -62,7 +55,6 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
             <a class="navbar-brand" href="index.php">
               <!-- Logo icon -->
               <b class="logo-icon ps-2">
-                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
                 <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" width="25" />
               </b>
@@ -72,13 +64,7 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
                 <!-- dark Logo text -->
                 <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" />
               </span>
-              <!-- Logo icon -->
-              <!-- <b class="logo-icon"> -->
-              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-              <!-- Dark Logo icon -->
-              <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
 
-              <!-- </b> -->
               <!--End Logo icon -->
             </a>
             <!-- ============================================================== -->
@@ -101,85 +87,34 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
                 <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
               </li>
               <!-- ============================================================== -->
-              <!-- create new -->
+
               <!-- ============================================================== -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                  <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <!-- ============================================================== -->
-              <!-- Search -->
-              <!-- ============================================================== -->
-              <!-- <li class="nav-item search-box">
-              <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-magnify fs-4"></i></a>
-              <form class="app-search position-absolute">
-                <input type="text" class="form-control" placeholder="Search &amp; enter" />
-                <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-              </form>
-            </li> -->
+
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav float-end">
               <!-- ============================================================== -->
-              <!-- Comment -->
-              <!-- ============================================================== -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="mdi mdi-bell font-24"></i>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <!-- ============================================================== -->
-              <!-- End Comment -->
-              <!-- ============================================================== -->
-              <!-- ============================================================== -->
               <!-- Messages -->
               <!-- ============================================================== -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="font-24 mdi mdi-comment-processing"></i>
+                  <i class="mdi mdi-bell font-24">
+                    <span class="position-absolute top-50 start-90 translate-middle badge rounded-circle bg-danger" style="font-size: 10px;">
+                      99+
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </i>
                 </a>
-                <ul class="
-                    dropdown-menu dropdown-menu-end
-                    mailbox
-                    animated
-                    bounceInDown
-                  " aria-labelledby="2">
+                <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown" aria-labelledby="2">
                   <ul class="list-style-none">
                     <li>
                       <div class="">
                         <!-- Message -->
                         <a href="javascript:void(0)" class="link border-top">
                           <div class="d-flex no-block align-items-center p-10">
-                            <span class="
-                                btn btn-success btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-calendar text-white fs-4"></i></span>
+                            <span class="btn btn-success btn-circle d-flex align-items-center justify-content-center"><i class="mdi mdi-calendar text-white fs-4"></i></span>
                             <div class="ms-2">
                               <h5 class="mb-0">Event today</h5>
                               <span class="mail-desc">Just a reminder that event</span>
@@ -261,10 +196,10 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
                   <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-settings me-1 ms-1"></i> Account
                     Setting</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                  <a class="dropdown-item" href="javascript:void(0)" onclick="t();"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
                   <div class="dropdown-divider"></div>
                   <div class="ps-4 p-10">
-                    <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded text-white">View Profile</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded text-white"> Profile</a>
                   </div>
                 </ul>
               </li>
@@ -288,50 +223,26 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
           <nav class="sidebar-nav">
             <ul id="sidebarnav" class="pt-4">
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu text-uppercase">Dashboard</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-monitor" aria-hidden="true"></i><span class="hide-menu"> Meeting Schedule</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu text-uppercase">Students</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Students</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-book-open"></i><span class="hide-menu text-uppercase">Teachers</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-book-open"></i><span class="hide-menu">Univercities</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu text-uppercase">Classes</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu">Assessors</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span class="hide-menu text-uppercase">Payments</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span class="hide-menu">Training Places</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-paper-cut-vertical"></i><span class="hide-menu text-uppercase">Attendence</span></a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-paper-cut-vertical"></i><span class="hide-menu">Reports</span></a>
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false"><i class="mdi mdi-poll"></i><span class="hide-menu text-uppercase">Complaints</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false"><i class="mdi mdi-poll"></i><span class="hide-menu">Monitoring</span></a>
-              </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu"> User </span></a>
-                <ul aria-expanded="false" class="collapse first-level">
-                  <li class="sidebar-item" onclick="logout();">
-                    <a href="#" class="sidebar-link"><i class="mdi mdi-logout"></i><span class="hide-menu"> Log Out </span></a>
-                  </li>
-                  <li class="sidebar-item">
-                    <a href="#" class="sidebar-link"><i class="mdi mdi-cube"></i><span class="hide-menu"> About </span></a>
-                  </li>
-                </ul>
-              </li>
-              <!-- <li class="sidebar-item p-3">
-              <a href="https://github.com/wrappixel/matrix-admin-bt5" target="_blank" class="
-                    w-100
-                    btn btn-cyan
-                    d-flex
-                    align-items-center
-                    text-white
-                  "><i class="mdi mdi-cloud-download font-20 me-2"></i>Download
-                Free</a>
-            </li> -->
             </ul>
           </nav>
           <!-- End Sidebar navigation -->
@@ -351,7 +262,7 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Monitoring</h4>
+              <!-- <h4 class="page-title">Monitoring</h4> -->
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -373,223 +284,146 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
         <!-- ============================================================== -->
         <div class="container-fluid">
           <!-- ============================================================== -->
-          <!-- Sales Cards  -->
+          <!-- dashboard  -->
           <!-- ============================================================== -->
-          <div class="row">
-            <!-- Monitoring -->
-
-            <div class="col-12 " id="monit" style="display: block;">
-
-              <h1 class="text-decoration-underline text-center border border-2 border-primary  p-2 rounded my-2 text-uppercase fw-bold">Monitoring</h1>
-
-              <div class="row">
-
-                <!-- <div class="col-lg-4 col-12">
-                <select id="ad_type" class="select2 form-select shadow-none" style="width: 100%; height: 36px">
-                  <option value="0">Select Admin Type</option>
-                  <option value="1">Super Admin</option>
-                  <option value="2">Admin</option>
-                </select>
-              </div> -->
-
-                <?php
-
-                if (isset($_SESSION["SA"])) {
-                ?>
-
-                  <div class="col-12">
-                    <div class="row">
-                      <div class="col-12 col-lg-4 d-grid">
-                        <select class="form-select select2 shadow-none fw-bold" id="addinsselct">
-                          <option value="0">Select inspector</option>
-                          <?php
-                          $rsinsadd = Database::search("SELECT * FROM admin");
-                          //  WHERE ad_admin_typ_id='2';
-                          $ninsadd = $rsinsadd->num_rows;
-                          for ($i = 0; $i < $ninsadd; $i++) {
-                            $dinsadd = $rsinsadd->fetch_assoc();
-
-                            $rsin = Database::search("SELECT * FROM inspector 
-                          INNER JOIN admin ON inspector.admin_ad_id=admin.ad_id WHERE admin_ad_id='" . $dinsadd["ad_id"] . "';");
-                            $tbnin = $rsin->num_rows;
-                            if ($tbnin == 0) {
-                          ?>
-                              <option value="<?= $dinsadd["ad_id"] ?>"><?= $dinsadd["name"] ?></option>
-                            <?php
-
-                            } else {
-                            ?>
-                              <option>All admins are inspectors</option>
-                          <?php
-                            }
-                          }
-                          ?>
-                        </select>
-                      </div>
-                      <div class="col-12 col-lg-4 d-grid">
-                        <button class="btn btn-outline-primary fw-bold shadow mt-lg-0 mt-2" onclick="addinspectors();">Add To Inspectors</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4">
-                    <h4>Inspectors</h4>
-
-                    <?php
-
-                    $rstb1 = Database::search("SELECT * FROM inspector 
-                  INNER JOIN admin ON inspector.admin_ad_id=admin.ad_id
-                  INNER JOIN admin_type ON admin.ad_admin_typ_id=admin_type.admn_typ_id;");
-                    $tbn1 = $rstb1->num_rows;
-                    ?>
-
-                    <table class=" table table-responsive table-striped shadow ">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-
-                        for ($i = 0; $i < $tbn1; $i++) {
-                          $tbd2 = $rstb1->fetch_assoc();
-
-                        ?>
-                          <tr onclick="INSselctST('<?= $tbd2['ad_nic']; ?>');" id="<?= $tbd2['ad_nic']; ?>" class="clickable">
-                            <td><?= $tbd2["ins_id"]; ?></td>
-                            <td><?= $tbd2["name"]; ?></td>
-                          </tr>
-
-                        <?php
-
-                        }
-
-                        ?>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="col-12 col-lg-12">
-
-                    <div id="insst">
-
-                    </div>
-
-                  </div>
-
-
-                  <?php
-                } elseif (isset($_SESSION["AD"])) {
-
-                  $insrs = Database::search("SELECT * FROM inspector WHERE admin_ad_id='" . $_SESSION["AD"]["ad_id"] . "';");
-                  $insn = $insrs->num_rows;
-
-                  if ($insn == 1) {
-
-                    $insd =  $insrs->fetch_assoc();
-
-                  ?>
-
-                    <div class="row">
-
-                      <form method="post" action="exsx.php" class="col-12 border p-2">
-
-                        <div class="row">
-
-                          <div class="col-4">
-                            <input type="text" name="sb" class="form-control" onkeyup="searchmonitorInspect();" id="sb" placeholder="Search Available Training Students to Monitoring">
-                          </div>
-                          <div class="col-4">
-                            <select name="sc" id="sc" onclick="searchmonitorInspect();" class="form-control">
-                              <option value="0">select company</option>
-
-                              <?php
-                              $c = Database::search("SELECT * FROM worksite;");
-                              $n = $c->num_rows;
-
-                              for ($i = 0; $i < $n; $i++) {
-                                $d = $c->fetch_assoc();
-
-                              ?>
-                                <option value="<?php echo $d["wrksit_id"]; ?>"><?php echo $d["wrksit_name"]; ?></option>
-                              <?php
-
-                              }
-
-                              ?>
-                            </select>
-                          </div>
-                          <div class="col-4">
-                            <input class="form-control" type="date" id="monitoring_date">
-                          </div>
-
+          <div class="row" id="dashb" style="display: block;">
+            <h4>Dashboard</h4>
+            <div class="col-12 " >
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-cyan text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-account-multiple"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Students Count</h6>
+                          <h4 class="text-white text-uppercase">2000</h4>
                         </div>
-
-                      </form>
-
-                      <div id="tb" class="col-12">
-                        <h4 onclick="searchmonitorInspect('<?= $insd['ins_id']; ?>');" style="height: 400px; padding-top: 180px; border-style: dashed; border-color: #0000004b;" class="text-center mt-4   justify-content-center">If the tables are not loaded, click here.</h4>
                       </div>
-
                     </div>
-
-                  <?php
-
-                  } else {
-
-                  ?>
-
-                    <h4>Youre not an inspector</h4>
-
-                <?php
-
-                  }
-                }
-
-
-                ?>
-
-
-
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-success text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Teachers</h6>
+                          <h4 class="text-white text-uppercase">60</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-purple text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Teachers</h6>
+                          <h4 class="text-white text-uppercase">60</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-info text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Teachers</h6>
+                          <h4 class="text-white text-uppercase">60</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-warning text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Teachers</h6>
+                          <h4 class="text-white text-uppercase">60</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                      <div class="card card-hover">
+                        <div class="box bg-orange text-center">
+                          <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                          </h1>
+                          <h6 class="text-white text-uppercase">Teachers</h6>
+                          <h4 class="text-white text-uppercase">60</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-
             </div>
 
-            <!-- Monitoring -->
           </div>
           <!-- ============================================================== -->
-          <!-- Sales chart -->
+          <!-- dashboard  -->
           <!-- ============================================================== -->
-          <div class="row">
+          <!-- ============================================================== -->
+          <!-- Students -->
+          <!-- ============================================================== -->
+          <div class="row" id="students" style="display: none;">
 
           </div>
           <!-- ============================================================== -->
-          <!-- Sales chart -->
+          <!-- Students -->
           <!-- ============================================================== -->
           <!-- ============================================================== -->
-          <!-- Recent comment and chats -->
+          <!-- Teachers -->
           <!-- ============================================================== -->
-          <div class="row">
+          <div class="row" id="teachers" style="display: none;">
 
           </div>
           <!-- ============================================================== -->
-          <!-- Recent comment and chats -->
+          <!-- Teachers -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- classes -->
+          <!-- ============================================================== -->
+          <div class="row" id="classes" style="display: none;">
+
+          </div>
+          <!-- ============================================================== -->
+          <!-- classes -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- payments -->
+          <!-- ============================================================== -->
+          <div class="row" id="payments" style="display: none;">
+
+          </div>
+          <!-- ============================================================== -->
+          <!-- payments -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- attendence -->
+          <!-- ============================================================== -->
+          <div class="row" id="attendence" style="display: none;">
+
+          </div>
+          <!-- ============================================================== -->
+          <!-- attendence -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- complaints -->
+          <!-- ============================================================== -->
+          <div class="row" id="complaints" style="display: none;">
+
+          </div>
+          <!-- ============================================================== -->
+          <!-- complaints -->
           <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <!-- <footer class="footer text-center">
-        All Rights Reserved by Matrix-admin. Designed and Developed by
-        <a href="https://www.wrappixel.com">WrapPixel</a>.
-      </footer> -->
-        <!-- ============================================================== -->
-        <!-- End footer -->
         <!-- ============================================================== -->
       </div>
       <!-- ============================================================== -->
@@ -614,7 +448,6 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
     <!--This page JavaScript -->
-    <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
     <script src="../assets/libs/flot/excanvas.js"></script>
     <script src="../assets/libs/flot/jquery.flot.js"></script>
@@ -625,13 +458,11 @@ if (isset($_SESSION["SA"]) || $_SESSION["AD"]) {
     <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../dist/js/pages/chart/chart-page-init.js"></script>
     <script src="script.js"></script>
-  </body>
+
 
   </html>
 
 <?php
-} elseif (isset($_SESSION["AD"])) {
-  echo "You're Admin";
 } else {
-  header("Location: index.php");
+  //  header("Location: index.php");
 }
