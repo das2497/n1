@@ -188,4 +188,17 @@ function admin_student_update(st_id) {
 
 function admin_student_delete(st_id) {
     console.log(st_id);
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == 'success') {
+                location.reload();
+            }
+        }
+    }
+    var f = new FormData();
+    f.append('std_id',st_id);
+    r.open("POST", "admin_student_delete_process.php", true);
+    r.send(f);
 }
