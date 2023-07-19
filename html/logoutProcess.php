@@ -2,17 +2,15 @@
 
 session_start();
 
-if (isset($_SESSION["SA"])) {
+if (isset($_SESSION["AL_SA"])) {
 
-    $_SESSION["SA"] = "";
+    $_SESSION["AL_SA"] = null;
     session_destroy();
     echo "success";
     
-}elseif (isset($_SESSION["AD"])) {
+}elseif (isset($_SESSION["AL_AD"])) {
     
-    $_SESSION["AD"] = null;
+    $_SESSION["AL_AD"] = null;
     session_destroy();
     echo "success";
 }
-
-?>

@@ -1,9 +1,8 @@
 <?php
-// session_start();
-
+session_start();
 require 'connection.php';
 
-if (true) {
+if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
 
 ?>
   <!DOCTYPE html>
@@ -190,17 +189,7 @@ if (true) {
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-account me-1 ms-1"></i> My Profile</a>
-                  <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-wallet me-1 ms-1"></i> My Balance</a>
-                  <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-email me-1 ms-1"></i> Inbox</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-settings me-1 ms-1"></i> Account
-                    Setting</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)" onclick="t();"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
-                  <div class="dropdown-divider"></div>
-                  <div class="ps-4 p-10">
-                    <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded text-white"> Profile</a>
-                  </div>
+                  <a class="dropdown-item" href="javascript:void(0)" onclick="logout();"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
                 </ul>
               </li>
               <!-- ============================================================== -->
@@ -222,26 +211,26 @@ if (true) {
           <!-- Sidebar navigation-->
           <nav class="sidebar-nav">
             <ul id="sidebarnav" class="pt-4">
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu text-uppercase">Dashboard</span></a>
+              <li class="sidebar-item" onclick="admin_Dashboard();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu text-uppercase">Dashboard</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu text-uppercase">Students</span></a>
+              <li class="sidebar-item" onclick="admin_Students();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu text-uppercase">Students</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-book-open"></i><span class="hide-menu text-uppercase">Teachers</span></a>
+              <li class="sidebar-item" onclick="admin_Teachers();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-open"></i><span class="hide-menu text-uppercase">Teachers</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu text-uppercase">Classes</span></a>
+              <li class="sidebar-item" onclick="admin_Classes();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu text-uppercase">Classes</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span class="hide-menu text-uppercase">Payments</span></a>
+              <li class="sidebar-item" onclick="admin_Payments();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span class="hide-menu text-uppercase">Payments</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-paper-cut-vertical"></i><span class="hide-menu text-uppercase">Attendence</span></a>
+              <li class="sidebar-item" onclick="admin_Attendance();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-paper-cut-vertical"></i><span class="hide-menu text-uppercase">Attendence</span></a>
               </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false"><i class="mdi mdi-poll"></i><span class="hide-menu text-uppercase">Complaints</span></a>
+              <li class="sidebar-item" onclick="admin_Complaints();">
+                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-poll"></i><span class="hide-menu text-uppercase">Complaints</span></a>
               </li>
             </ul>
           </nav>
@@ -286,9 +275,9 @@ if (true) {
           <!-- ============================================================== -->
           <!-- dashboard  -->
           <!-- ============================================================== -->
-          <div class="row" id="dashb" style="display: block;">
+          <div class="row" id="admin_Dashboard" style="display: block;">
             <h4>Dashboard</h4>
-            <div class="col-12 " >
+            <div class="col-12 ">
               <div class="card">
                 <div class="card-body">
                   <div class="row">
@@ -370,8 +359,63 @@ if (true) {
           <!-- ============================================================== -->
           <!-- Students -->
           <!-- ============================================================== -->
-          <div class="row" id="students" style="display: none;">
-
+          <div class="row" id="admin_Students" style="display: none;">
+            <h4>Students</h4>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12 col-lg-2 offset-lg-10 d-grid">
+                  <button class="btn btn-outline-primary">Add student</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="table-responsive">
+                <h4>All Students</h4>
+                <table class="table table-striped table-bordered">
+                  <thead class="table-primary">
+                    <tr>
+                      <th>ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email Address</th>
+                      <th>Contact</th>
+                      <th>Password</th>
+                      <th>Registered Date</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-warning">
+                    <?php
+                    $admin_students = Database::search("SELECT * FROM student;");
+                    if ($admin_students->num_rows > 0) {
+                      while ($row = $admin_students->fetch_assoc()) {
+                    ?>
+                        <tr>
+                          <td><?= $row['std_id']; ?></td>
+                          <td><input id="<?= $row['std_id'] . 'std_first_name'; ?>" type="text" value="<?= $row['std_first_name']; ?>" class="form-control"></td>
+                          <td><input id="<?= $row['std_id'] . 'std_last_name'; ?>" type="text" value="<?= $row['std_last_name']; ?>" class="form-control"></td>
+                          <td><input id="<?= $row['std_id'] . 'std_email'; ?>" type="text" value="<?= $row['std_email']; ?>" class="form-control"></td>
+                          <td><input id="<?= $row['std_id'] . 'std_contact'; ?>" type="text" value="<?= $row['std_contact']; ?>" class="form-control"></td>
+                          <td><input id="<?= $row['std_id'] . 'std_password'; ?>" type="text" value="<?= $row['std_password']; ?>" class="form-control"></td>
+                          <td><?= $row['std_reg_date']; ?></td>
+                          <td><button class="btn btn-outline-primary" onclick="admin_student_update('<?= $row['std_id']; ?>');">Update</button></td>
+                          <td><button class="btn btn-outline-danger" onclick="admin_student_delete('<?= $row['std_id']; ?>');">Delete</button></td>
+                        </tr>
+                      <?php
+                      }
+                    } else {
+                      ?>
+                      <tr>
+                        <td colspan="7" class="text-center ">No Students to show</td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
           <!-- ============================================================== -->
           <!-- Students -->
@@ -379,8 +423,8 @@ if (true) {
           <!-- ============================================================== -->
           <!-- Teachers -->
           <!-- ============================================================== -->
-          <div class="row" id="teachers" style="display: none;">
-
+          <div class="row" id="admin_Teachers" style="display: none;">
+            <h4>Teachers</h4>
           </div>
           <!-- ============================================================== -->
           <!-- Teachers -->
@@ -388,8 +432,8 @@ if (true) {
           <!-- ============================================================== -->
           <!-- classes -->
           <!-- ============================================================== -->
-          <div class="row" id="classes" style="display: none;">
-
+          <div class="row" id="admin_Classes" style="display: none;">
+            <h4>Classes</h4>
           </div>
           <!-- ============================================================== -->
           <!-- classes -->
@@ -397,8 +441,8 @@ if (true) {
           <!-- ============================================================== -->
           <!-- payments -->
           <!-- ============================================================== -->
-          <div class="row" id="payments" style="display: none;">
-
+          <div class="row" id="admin_Payments" style="display: none;">
+            <h4>Payments</h4>
           </div>
           <!-- ============================================================== -->
           <!-- payments -->
@@ -406,8 +450,8 @@ if (true) {
           <!-- ============================================================== -->
           <!-- attendence -->
           <!-- ============================================================== -->
-          <div class="row" id="attendence" style="display: none;">
-
+          <div class="row" id="admin_Attendance" style="display: none;">
+            <h4>Attendence</h4>
           </div>
           <!-- ============================================================== -->
           <!-- attendence -->
@@ -415,8 +459,8 @@ if (true) {
           <!-- ============================================================== -->
           <!-- complaints -->
           <!-- ============================================================== -->
-          <div class="row" id="complaints" style="display: none;">
-
+          <div class="row" id="admin_Complaints" style="display: none;">
+            <h4>Complaints</h4>
           </div>
           <!-- ============================================================== -->
           <!-- complaints -->
@@ -464,5 +508,5 @@ if (true) {
 
 <?php
 } else {
-  //  header("Location: index.php");
+  header("Location: index.php");
 }

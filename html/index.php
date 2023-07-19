@@ -2,8 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION["SA"]) || isset($_SESSION["AD"])) {
-
+if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
     header("Location: admin.php");
 } else {
 
