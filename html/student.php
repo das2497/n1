@@ -121,51 +121,6 @@ if (isset($_SESSION["AL_ST"])) {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <!-- Message -->
-                                                <a href="javascript:void(0)" class="link border-top">
-                                                    <div class="d-flex no-block align-items-center p-10">
-                                                        <span class="
-                                btn btn-info btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-settings fs-4"></i></span>
-                                                        <div class="ms-2">
-                                                            <h5 class="mb-0">Settings</h5>
-                                                            <span class="mail-desc">You can customize this template</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <!-- Message -->
-                                                <a href="javascript:void(0)" class="link border-top">
-                                                    <div class="d-flex no-block align-items-center p-10">
-                                                        <span class="
-                                btn btn-primary btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-account fs-4"></i></span>
-                                                        <div class="ms-2">
-                                                            <h5 class="mb-0">Pavan kumar</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <!-- Message -->
-                                                <a href="javascript:void(0)" class="link border-top">
-                                                    <div class="d-flex no-block align-items-center p-10">
-                                                        <span class="
-                                btn btn-danger btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-link fs-4"></i></span>
-                                                        <div class="ms-2">
-                                                            <h5 class="mb-0">Luanch Admin</h5>
-                                                            <span class="mail-desc">Just see the my new admin!</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
                                             </div>
                                         </li>
                                     </ul>
