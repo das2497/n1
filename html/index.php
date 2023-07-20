@@ -4,6 +4,8 @@ session_start();
 
 if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
     header("Location: admin.php");
+} elseif (isset($_SESSION["AL_ST"])) {
+    header("Location: student.php");
 } else {
 
 ?>
