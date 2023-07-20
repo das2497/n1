@@ -24,17 +24,17 @@ DROP TABLE IF EXISTS `admin`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
   `ad_id` int NOT NULL AUTO_INCREMENT,
-  `ad_uname` varchar(50) COLLATE utf8_bin NOT NULL,
-  `ad_first_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `ad_last_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `ad_contact` varchar(50) COLLATE utf8_bin NOT NULL,
-  `ad_password` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ad_uname` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ad_first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ad_last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ad_contact` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ad_password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `ad_type` int NOT NULL,
   `ad_reg_date` date NOT NULL,
   PRIMARY KEY (`ad_id`),
   KEY `FK_admin_admin_type` (`ad_type`),
   CONSTRAINT `FK_admin_admin_type` FOREIGN KEY (`ad_type`) REFERENCES `admin_type` (`adt_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,9 +56,9 @@ DROP TABLE IF EXISTS `admin_type`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin_type` (
   `adt_id` int NOT NULL AUTO_INCREMENT,
-  `adt_type` varchar(50) COLLATE utf8_bin NOT NULL,
+  `adt_type` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`adt_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,14 +80,14 @@ DROP TABLE IF EXISTS `student`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student` (
   `std_id` int NOT NULL AUTO_INCREMENT,
-  `std_first_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `std_last_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `std_email` varchar(50) COLLATE utf8_bin NOT NULL,
-  `std_contact` varchar(50) COLLATE utf8_bin NOT NULL,
-  `std_password` varchar(50) COLLATE utf8_bin NOT NULL,
+  `std_first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `std_last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `std_email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `std_contact` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `std_password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `std_reg_date` date NOT NULL,
   PRIMARY KEY (`std_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +99,33 @@ LOCK TABLES `student` WRITE;
 INSERT INTO `student` VALUES (1,'Dasun','Madushan','Dasun@gmail.com','0775665435','0000','2023-07-19');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `teacher`
+--
+
+DROP TABLE IF EXISTS `teacher`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `teacher` (
+  `tch_id` int NOT NULL AUTO_INCREMENT,
+  `tch_first_name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `tch_last_name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `tch_email` varchar(50) COLLATE utf8_bin NOT NULL,
+  `tch_password` varchar(50) COLLATE utf8_bin NOT NULL,
+  `tch_reg_date` date NOT NULL,
+  PRIMARY KEY (`tch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `teacher`
+--
+
+LOCK TABLES `teacher` WRITE;
+/*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -109,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-19 18:56:05
+-- Dump completed on 2023-07-19 23:08:33

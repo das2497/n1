@@ -87,7 +87,7 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
                                         <h1 class="text-center text-uppercase fw-bold">Login</h1>
                                         <small id="loginSM" style="display: none; " class="small text-success fw-bold text-center"></small>
                                         <div class="col-12 g-2">
-                                            <label class="form-label text-uppercase"><span class="text-danger">* </span>User Name</label>
+                                            <label class="form-label text-uppercase"><span class="text-danger">* </span>User Name or Email</label>
                                             <small id="unameSM" style="display: none; " class="small text-danger fw-bold"></small>
                                             <input type="text" class="form-control" id="uname" value="<?php echo $uname; ?>">
                                         </div>
@@ -109,12 +109,12 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
                                         </div>
                                         <div class="col-12 d-grid my-4">
                                             <div class="row">
-                                                <div class="col-12 col-lg-6 d-grid g-2">
+                                                <div class="col-12 d-grid g-2">
                                                     <button class="btn btn-outline-primary shadow fs-4 fw-bold text-uppercase" onclick="login();">Log In</button>
                                                 </div>
-                                                <div class="col-12 col-lg-6 d-grid g-2">
+                                                <!-- <div class="col-12 col-lg-6 d-grid g-2">
                                                     <button class="btn btn-outline-danger shadow fs-4 fw-bold text-uppercase" onclick="loginRegister();">I'm not a User</button>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

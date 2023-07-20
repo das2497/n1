@@ -176,7 +176,7 @@ function admin_student_update(st_id) {
         }
     }
     var f = new FormData();
-    f.append('std_id',st_id);
+    f.append('std_id', st_id);
     f.append('std_first_name', std_first_name.value);
     f.append('std_last_name', std_last_name.value);
     f.append('std_email', std_email.value);
@@ -198,7 +198,33 @@ function admin_student_delete(st_id) {
         }
     }
     var f = new FormData();
-    f.append('std_id',st_id);
+    f.append('std_id', st_id);
     r.open("POST", "admin_student_delete_process.php", true);
+    r.send(f);
+}
+
+function admin_add_std() {
+    var admin_add_std_fname = document.getElementById('admin_add_std_fname');
+    var admin_add_std_lname = document.getElementById('admin_add_std_lname');
+    var admin_add_std_email = document.getElementById('admin_add_std_email');
+    var admin_add_std_cont = document.getElementById('admin_add_std_cont');
+    var admin_add_std_pass = document.getElementById('admin_add_std_pass');
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+        if (r.readyState == 4) {
+            var t = r.responseText;
+            if (t == 'success') {
+                document.getElementById('admin_add_std_main_sm').innerHTML = t;
+            }
+        }
+    }
+    var f = new FormData();
+    f.append('admin_add_std_fname', admin_add_std_fname.value);
+    f.append('admin_add_std_lname', admin_add_std_lname.value);
+    f.append('admin_add_std_email', admin_add_std_email.value);
+    f.append('admin_add_std_cont', admin_add_std_cont.value);
+    f.append('admin_add_std_pass', admin_add_std_pass.value);
+    r.open("POST", "admin_student_add_process.php", true);
     r.send(f);
 }

@@ -119,52 +119,7 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
                               <span class="mail-desc">Just a reminder that event</span>
                             </div>
                           </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="javascript:void(0)" class="link border-top">
-                          <div class="d-flex no-block align-items-center p-10">
-                            <span class="
-                                btn btn-info btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-settings fs-4"></i></span>
-                            <div class="ms-2">
-                              <h5 class="mb-0">Settings</h5>
-                              <span class="mail-desc">You can customize this template</span>
-                            </div>
-                          </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="javascript:void(0)" class="link border-top">
-                          <div class="d-flex no-block align-items-center p-10">
-                            <span class="
-                                btn btn-primary btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-account fs-4"></i></span>
-                            <div class="ms-2">
-                              <h5 class="mb-0">Pavan kumar</h5>
-                              <span class="mail-desc">Just see the my admin!</span>
-                            </div>
-                          </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="javascript:void(0)" class="link border-top">
-                          <div class="d-flex no-block align-items-center p-10">
-                            <span class="
-                                btn btn-danger btn-circle
-                                d-flex
-                                align-items-center
-                                justify-content-center
-                              "><i class="mdi mdi-link fs-4"></i></span>
-                            <div class="ms-2">
-                              <h5 class="mb-0">Luanch Admin</h5>
-                              <span class="mail-desc">Just see the my new admin!</span>
-                            </div>
-                          </div>
-                        </a>
+                        </a>                     
                       </div>
                     </li>
                   </ul>
@@ -364,7 +319,7 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
             <div class="col-12">
               <div class="row">
                 <div class="col-12 col-lg-2 offset-lg-10 d-grid">
-                  <button class="btn btn-outline-primary">Add student</button>
+                  <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#add_students">Add student</button>
                 </div>
               </div>
             </div>
@@ -477,6 +432,74 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- add students  -->
+    <!-- ============================================================== -->
+
+    <div class="modal fade " id="add_students" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content ">
+          <div class="modal-header">
+            <h1 class="text-center fw-bold text-uppercase">Student Register</h1>
+          </div>
+          <small class="text-success fw-bold fs-4 text-center mt-2 d-block" id="admin_uni_reg_uni_main_sm"></small>
+          <div class="modal-body">
+            <div class="row ">
+              <div class="col-12">
+                <div class="row ">
+                  <div class="col-12 ">
+                    <div class="row">
+                      <div class="col-12 g-2">
+                        <label class="form-label" id="uia"><span class="text-danger">*</span>First Name</label>
+                        <small id="admin_uni_reg_uni_addr_sm" class="small text-danger d-block"></small>
+                        <input type="text" class="form-control" id="admin_add_std_fname">
+                      </div>
+                      <div class="col-12 g-2">
+                        <label class="form-label" id="uie"><span class="text-danger">*</span>Last Name</label>
+                        <small id="admin_uni_reg_uni_email_sm" class="small text-danger d-block"></small>
+                        <input type="text" class="form-control" id="admin_add_std_lname">
+                      </div>
+                      <div class="col-12 g-2">
+                        <label class="form-label"><span class="text-danger">*</span>Email Address</label>
+                        <small id="admin_uni_reg_uni_teli_1_sm" class="small text-danger d-block"></small>
+                        <input type="text" class="form-control" id="admin_add_std_email">
+                      </div>
+                      <div class="col-12 g-2">
+                      <label class="form-label"><span class="text-danger">*</span>Contact No</label>                        
+                        <small id="admin_uni_reg_uni_teli_2_sm" class="small text-danger d-block"></small>
+                        <input type="text" class="form-control" id="admin_add_std_cont">
+                      </div>
+                      <div class="col-12 g-2">
+                        <label class="form-label"><span class="text-danger">*</span>Password</label>
+                        <small id="admin_uni_reg_uni_pass_sm" class="small text-danger d-block"></small>
+                        <input type="text" class="form-control" id="admin_add_std_pass">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          <small id="admin_add_std_main_sm" class="small text-danger d-block"></small>
+            <div class="row w-100">
+              <div class="col-6 d-grid">
+                <button type="button" class="btn btn-outline-danger fw-bold" data-bs-dismiss="modal" onclick="admin_add_std_close();">Close</button>
+              </div>
+              <div class="col-6 d-grid">
+                <button class="btn btn-outline-primary fw-bold text-uppercase" onclick="admin_add_std();">Register now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- add students  -->
+    <!-- ============================================================== -->
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
@@ -502,7 +525,7 @@ if (isset($_SESSION["AL_SA"]) || isset($_SESSION["AL_AD"])) {
     <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../dist/js/pages/chart/chart-page-init.js"></script>
     <script src="script.js"></script>
-
+  </body>
 
   </html>
 
